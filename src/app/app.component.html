@@ -1,336 +1,351 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<style>
-  :host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-  }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
-  }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-
-  .angular-logo {
-    max-width: 9.2rem;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 982 239"
-        fill="none"
-        class="angular-logo"
-      >
-        <g clip-path="url(#a)">
-          <path
-            fill="url(#b)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-          <path
-            fill="url(#c)"
-            d="M388.676 191.625h30.849L363.31 31.828h-35.758l-56.215 159.797h30.848l13.174-39.356h60.061l13.256 39.356Zm-65.461-62.675 21.602-64.311h1.227l21.602 64.311h-44.431Zm126.831-7.527v70.202h-28.23V71.839h27.002v20.374h1.392c2.782-6.71 7.2-12.028 13.255-15.956 6.056-3.927 13.584-5.89 22.503-5.89 8.264 0 15.465 1.8 21.684 5.318 6.137 3.518 10.964 8.673 14.319 15.382 3.437 6.71 5.074 14.81 4.992 24.383v76.175h-28.23v-71.92c0-8.019-2.046-14.237-6.219-18.819-4.173-4.5-9.819-6.791-17.102-6.791-4.91 0-9.328 1.063-13.174 3.272-3.846 2.128-6.792 5.237-9.001 9.328-2.046 4.009-3.191 8.918-3.191 14.728ZM589.233 239c-10.147 0-18.82-1.391-26.103-4.091-7.282-2.7-13.092-6.382-17.511-10.964-4.418-4.582-7.528-9.655-9.164-15.219l25.448-6.136c1.145 2.372 2.782 4.663 4.991 6.954 2.209 2.291 5.155 4.255 8.837 5.81 3.683 1.554 8.428 2.291 14.074 2.291 8.019 0 14.647-1.964 19.884-5.81 5.237-3.845 7.856-10.227 7.856-19.064v-22.665h-1.391c-1.473 2.946-3.601 5.892-6.383 9.001-2.782 3.109-6.464 5.645-10.965 7.691-4.582 2.046-10.228 3.109-17.101 3.109-9.165 0-17.511-2.209-25.039-6.545-7.446-4.337-13.42-10.883-17.757-19.474-4.418-8.673-6.628-19.473-6.628-32.565 0-13.091 2.21-24.301 6.628-33.383 4.419-9.082 10.311-15.955 17.839-20.7 7.528-4.746 15.874-7.037 25.039-7.037 7.037 0 12.846 1.145 17.347 3.518 4.582 2.373 8.182 5.236 10.883 8.51 2.7 3.272 4.746 6.382 6.137 9.327h1.554v-19.8h27.821v121.749c0 10.228-2.454 18.737-7.364 25.447-4.91 6.709-11.538 11.7-20.048 15.055-8.509 3.355-18.165 4.991-28.884 4.991Zm.245-71.266c5.974 0 11.047-1.473 15.302-4.337 4.173-2.945 7.446-7.118 9.573-12.519 2.21-5.482 3.274-12.027 3.274-19.637 0-7.609-1.064-14.155-3.274-19.8-2.127-5.646-5.318-10.064-9.491-13.255-4.174-3.11-9.329-4.746-15.384-4.746s-11.537 1.636-15.792 4.91c-4.173 3.272-7.365 7.772-9.492 13.418-2.128 5.727-3.191 12.191-3.191 19.392 0 7.2 1.063 13.745 3.273 19.228 2.127 5.482 5.318 9.736 9.573 12.764 4.174 3.027 9.41 4.582 15.629 4.582Zm141.56-26.51V71.839h28.23v119.786h-27.412v-21.273h-1.227c-2.7 6.709-7.119 12.191-13.338 16.446-6.137 4.255-13.747 6.382-22.748 6.382-7.855 0-14.81-1.718-20.783-5.237-5.974-3.518-10.72-8.591-14.075-15.382-3.355-6.709-5.073-14.891-5.073-24.464V71.839h28.312v71.921c0 7.609 2.046 13.664 6.219 18.083 4.173 4.5 9.655 6.709 16.365 6.709 4.173 0 8.183-.982 12.111-3.028 3.927-2.045 7.118-5.072 9.655-9.082 2.537-4.091 3.764-9.164 3.764-15.218Zm65.707-109.395v159.796h-28.23V31.828h28.23Zm44.841 162.169c-7.61 0-14.402-1.391-20.457-4.091-6.055-2.7-10.883-6.791-14.32-12.109-3.518-5.319-5.237-11.946-5.237-19.801 0-6.791 1.228-12.355 3.765-16.773 2.536-4.419 5.891-7.937 10.228-10.637 4.337-2.618 9.164-4.664 14.647-6.055 5.4-1.391 11.046-2.373 16.856-3.027 7.037-.737 12.683-1.391 17.102-1.964 4.337-.573 7.528-1.555 9.574-2.782 1.963-1.309 3.027-3.273 3.027-5.973v-.491c0-5.891-1.718-10.391-5.237-13.664-3.518-3.191-8.51-4.828-15.056-4.828-6.955 0-12.356 1.473-16.447 4.5-4.009 3.028-6.71 6.546-8.183 10.719l-26.348-3.764c2.046-7.282 5.483-13.336 10.31-18.328 4.746-4.909 10.638-8.59 17.511-11.045 6.955-2.455 14.565-3.682 22.912-3.682 5.809 0 11.537.654 17.265 2.045s10.965 3.6 15.711 6.71c4.746 3.109 8.51 7.282 11.455 12.6 2.864 5.318 4.337 11.946 4.337 19.883v80.184h-27.166v-16.446h-.9c-1.719 3.355-4.092 6.464-7.201 9.328-3.109 2.864-6.955 5.237-11.619 6.955-4.828 1.718-10.229 2.536-16.529 2.536Zm7.364-20.701c5.646 0 10.556-1.145 14.729-3.354 4.173-2.291 7.364-5.237 9.655-9.001 2.292-3.763 3.355-7.854 3.355-12.273v-14.155c-.9.737-2.373 1.391-4.5 2.046-2.128.654-4.419 1.145-7.037 1.636-2.619.491-5.155.9-7.692 1.227-2.537.328-4.746.655-6.628.901-4.173.572-8.019 1.472-11.292 2.781-3.355 1.31-5.973 3.11-7.855 5.401-1.964 2.291-2.864 5.318-2.864 8.918 0 5.237 1.882 9.164 5.728 11.782 3.682 2.782 8.51 4.091 14.401 4.091Zm64.643 18.328V71.839h27.412v19.965h1.227c2.21-6.955 5.974-12.274 11.292-16.038 5.319-3.763 11.456-5.645 18.329-5.645 1.555 0 3.355.082 5.237.163 1.964.164 3.601.328 4.91.573v25.938c-1.227-.41-3.109-.819-5.646-1.146a58.814 58.814 0 0 0-7.446-.49c-5.155 0-9.738 1.145-13.829 3.354-4.091 2.209-7.282 5.236-9.655 9.164-2.373 3.927-3.519 8.427-3.519 13.5v70.448h-28.312ZM222.077 39.192l-8.019 125.923L137.387 0l84.69 39.192Zm-53.105 162.825-57.933 33.056-57.934-33.056 11.783-28.556h92.301l11.783 28.556ZM111.039 62.675l30.357 73.803H80.681l30.358-73.803ZM7.937 165.115 0 39.192 84.69 0 7.937 165.115Z"
-          />
-        </g>
-        <defs>
-          <radialGradient
-            id="c"
-            cx="0"
-            cy="0"
-            r="1"
-            gradientTransform="rotate(118.122 171.182 60.81) scale(205.794)"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#FF41F8" />
-            <stop offset=".707" stop-color="#FF41F8" stop-opacity=".5" />
-            <stop offset="1" stop-color="#FF41F8" stop-opacity="0" />
-          </radialGradient>
-          <linearGradient
-            id="b"
-            x1="0"
-            x2="982"
-            y1="192"
-            y2="192"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stop-color="#F0060B" />
-            <stop offset="0" stop-color="#F0070C" />
-            <stop offset=".526" stop-color="#CC26D5" />
-            <stop offset="1" stop-color="#7702FF" />
-          </linearGradient>
-          <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
-        </defs>
-      </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
+<header class="flex overflow-hidden flex-col items-center bg-white">
+  <nav class="flex flex-col justify-center items-center self-stretch px-16 py-1 w-full text-lg font-semibold text-white shadow-sm bg-neutral-800 max-md:px-5 max-md:max-w-full">
+    <div class="flex flex-wrap gap-5 justify-between w-full max-w-[939px] max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b6ead73a451b130bebb8279462680749bcce81bcfdb5913d99ebd24d42ae985b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Company logo" class="object-contain shrink-0 max-w-full aspect-[1.27] w-[117px]" />
+      <div class="flex flex-wrap gap-10 my-auto max-md:max-w-full">
+        <div class="flex-auto self-start mt-4">
+          <a href="#inicio" class="mr-10">Inicio</a>
+          <a href="#equipo" class="mr-10">Equipo</a>
+          <a href="#resenas" class="mr-10">Reseñas</a>
+        </div>
+        <div class="flex flex-auto gap-3">
+          <button class="px-2.5 py-3 bg-orange-500 rounded-xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            Iniciar Sesion
+          </button>
+          <button class="px-5 py-3 whitespace-nowrap bg-sky-600 rounded-xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            Registrarse
+          </button>
+        </div>
       </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="flex relative flex-col flex-wrap gap-5 justify-between self-stretch pl-4 w-full font-semibold min-h-[348px] max-md:max-w-full">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/14afb2c88a2b264ae1adeccbd52de2bca6cd12f5372d700405128cff83f0f139?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Background image" class="object-cover absolute inset-0 size-full" />
+    <div class="absolute inset-y-0 right-0 w-1/2 h-full bg-black bg-opacity-50" style="clip-path: polygon(5% 0, 100% 0, 100% 100%, 38% 100%);">
+      <div class="flex relative flex-col pt-20 pr-10 pb-8 pl-32 min-h-[351px] max-md:pl-5 max-md:max-w-full">
+        <div class="flex relative gap-20 text-2xl text-center text-white">
+          <div class="flex-auto">
+            ¡Bandalos Chinos llega a Perú en 2024 con su esperado 'Big Blue Album' Tour! Asegura tus entradas ahora y sé parte de esta experiencia única.
+          </div>
+
+        </div>
+        <button class="relative self-center px-3 py-2 mt-9 ml-20 max-w-full text-lg text-black bg-white rounded-xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[124px]">
+          Compra YA!
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-5 text-2xl font-semibold text-black max-md:max-w-full flex justify-center items-center">
+    <div class="w-full max-w-[938px]">
+      <h2 class="text-center">Encuentra tus próximos eventos favoritos y asegura tu lugar hoy</h2>
+      <div class="mt-5 w-full">
+        <div class="flex gap-5 max-md:flex-col">
+          <article class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex relative flex-col grow pt-64 pb-10 font-semibold text-white rounded-[23px] aspect-[0.641] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:pt-24 max-md:mt-7">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b713a70aaa0b8ae8f0da904242a9eafccdc2ccc6ae232b1501e8cf9da40a0e27?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Billie Eilish concert" class="object-cover absolute inset-0 size-full rounded-[23px]" />
+              <div class="flex relative flex-col px-3.5 pb-1.5 w-full bg-black bg-opacity-50">
+                <h3 class="mr-3 ml-2.5 text-2xl max-md:mr-2.5">Billie Eilish - HTE 2024</h3>
+                <div class="flex gap-5 mt-1.5 text-xs whitespace-nowrap">
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customGreen bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5212dad13d023f9ca3c10f33133f9b3cec82ce34302c62bb45bc1fb58ccd5b1b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain w-2 aspect-square" />
+                    <span class="flex-1 text-center w-full mr-3">Trending</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customYellow bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/502b0ba0d0a2a3223ef1be3cb3cff260647cf40ac3de449a9a96c81f61ec589e?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain shrink-0 self-start w-3 aspect-[1.09]" />
+                    <span class="flex-1 text-center w-full mr-3">SuperStar</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customPink bg-opacity-80">
+                    <div class="flex shrink-0 my-auto w-2.5 h-2.5 bg-white rounded-full"></div>
+                    <span class="flex-1 text-center w-full mr-3">Pop</span>
+                  </div>
+                </div>
+                <p class="self-center mt-4 text-xs text-center">
+                  Billie Eilish llega a Lima con su monumental álbum! No te pierdas esta oportunidad única y sé de los afortunados en asegurar tu entrada.
+                </p>
+                <button class="self-center px-3 py-1 mt-5 max-w-full text-sm bg-white rounded-xl text-black text-opacity-80 w-[101px]">
+                  Compra YA!
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex relative flex-col grow pt-64 pb-10 font-semibold text-white rounded-[23px] aspect-[0.641] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:pt-24 max-md:mt-7">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1308df814a401b23ea0ff34200dcf4dd423980614c3ba7c603c372a3cee5f096?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Mac deMarco concert" class="object-cover absolute inset-0 size-full rounded-[23px]" />
+              <div class="flex relative flex-col px-3.5 pb-1.5 w-full bg-black bg-opacity-50">
+                <h3 class="mr-2.5 text-2xl max-md:ml-2">Mac deMarco - 2 Album</h3>
+                <div class="flex gap-5 mt-1.5 w-full text-xs whitespace-nowrap">
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customGreen bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5212dad13d023f9ca3c10f33133f9b3cec82ce34302c62bb45bc1fb58ccd5b1b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain w-2 aspect-square" />
+                    <span class="flex-1 text-center w-full mr-3">Trending</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customYellow bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/502b0ba0d0a2a3223ef1be3cb3cff260647cf40ac3de449a9a96c81f61ec589e?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain shrink-0 self-start w-3 aspect-[1.09]" />
+                    <span class="flex-1 text-center w-full mr-3">SuperStar</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customOrange bg-opacity-80">
+                    <div class="flex shrink-0 my-auto w-2.5 h-2.5 bg-white rounded-full"></div>
+                    <span class="flex-1 text-center w-full mr-3">Indie</span>
+                  </div>
+                </div>
+                <p class="self-center mt-4 text-xs text-center">
+                  Mac DeMarco llega a Lima con su icónico álbum '2'! No pierdas la oportunidad de disfrutar de este concierto inolvidable.
+                </p>
+                <button class="self-center px-3 py-1 mt-5 max-w-full text-sm bg-white rounded-xl text-black text-opacity-80 w-[101px]">
+                  Compra YA!
+                </button>
+              </div>
+            </div>
+          </article>
+          <article class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+            <div class="flex relative flex-col grow pt-64 pb-10 font-semibold text-white rounded-[23px] aspect-[0.641] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:pt-24 max-md:mt-7">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e0ab5804d6e2d9f5ddbdd8e2fa6ee2776ab85b1461eaf4eadac36f249f7d7b2?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Linkin Park concert" class="object-cover absolute inset-0 size-full rounded-[23px]" />
+              <div class="flex relative flex-col px-3.5 pb-1.5 w-full bg-black bg-opacity-50">
+                <h3 class="mr-3.5 text-2xl max-md:mr-2.5 max-md:ml-2">Linkin Park - Tour2024</h3>
+                <div class="flex gap-5 mt-2.5 text-xs whitespace-nowrap">
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customGreen bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5212dad13d023f9ca3c10f33133f9b3cec82ce34302c62bb45bc1fb58ccd5b1b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain w-2 aspect-square" />
+                    <span class="flex-1 text-center w-full mr-3">Trending</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customYellow bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/502b0ba0d0a2a3223ef1be3cb3cff260647cf40ac3de449a9a96c81f61ec589e?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain shrink-0 self-start w-3 aspect-[1.09]" />
+                    <span class="flex-1 text-center w-full mr-3">SuperStar</span>
+                  </div>
+                  <div class="flex items-center justify-between gap-1.5 px-1.5 py-0.5 rounded-xl bg-customBlue bg-opacity-80">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/513f8ae1a1edba98a8e4c6bef750e912f472b82b24b917da42ef4b46acbcf4bc?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain shrink-0 my-auto w-2.5 aspect-[1.11]" />
+                    <span class="flex-1 text-center w-full mr-3">NuMetal</span>
+                  </div>
+                </div>
+                <p class="self-center mt-3.5 text-xs text-center w-[261px]">
+                  Linkin Park regresa con su épico Tour 2024! Vive la energía de su música en un concierto inolvidable. No te quedes fuera!
+                </p>
+                <button class="self-center px-3 py-1 mt-5 max-w-full text-sm bg-white rounded-xl text-black text-opacity-80 w-[101px]">
+                  Compra YA!
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-5 flex flex-col items-center">
+    <h2 class="text-2xl font-semibold text-black">¿Qué somos?</h2>
+    <div class="flex relative flex-col px-11 py-8 mt-3.5 w-full text-lg font-semibold text-center text-white rounded-[27px] max-w-[938px] min-h-[111px] max-md:px-5 max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/45fea9d06c5055450bebd6e216ea8af3bb740d46726d7382f59963dbb964453f?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Background image" class="object-cover absolute inset-0 size-full z-0" />
+      <p class="relative z-10">
+        Somos una empresa especializada en la venta de tickets para los mejores eventos, ofreciendo una experiencia segura y confiable para que disfrutes al máximo cada momento.
+      </p>
+    </div>
+    <div class="flex relative flex-col px-10 py-7 mt-6 w-full text-lg font-semibold text-center text-white rounded-[27px] max-w-[938px] min-h-[103px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ba94ac98e4c15ac04a265f9b8c4219972f9189e19bcfbd3e38270cd1b6af1e4c?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Background image" class="object-cover absolute inset-0 size-full z-0" />
+      <p class="relative z-10">
+        Garantizamos tu seguridad utilizando tecnología blockchain, con validación única en cada compra para ofrecerte transacciones seguras y confiables.
+      </p>
+    </div>
+  </section>
+
+  <section id="equipo" class="flex flex-col items-center self-stretch px-20 pt-4 pb-11 mt-10 w-full font-semibold text-white shadow-sm bg-neutral-800 max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <div class="flex flex-col w-full max-w-[938px] max-md:max-w-full">
+      <h2 class="self-center ml-6 text-2xl">¿Quienés somos?</h2>
+      <div class="flex flex-wrap gap-5 mt-4 text-sm">
+        <article class="flex flex-col flex-1 items-center py-5 rounded-2xl bg-stone-600 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/01563427bc14253476e2b13fe049dadd8c9f7ae5ee847ae7635415e4b43a1319?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Gustavo Siancas" class="object-contain max-w-full rounded-full aspect-square shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[119px]" />
+          <h3 class="self-stretch px-5 mt-3 bg-blue-400 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            GUSTAVO SIANCAS
+          </h3>
+          <p class="mt-6 text-center">
+            El éxito no es la clave de la felicidad, la felicidad es la clave del éxito.
+          </p>
+        </article>
+        <article class="flex flex-col flex-1 items-center py-5 rounded-2xl bg-stone-600 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb9a3f6c9208b9aebe2659fc842c641db23fd2d9422ed3217b54472637b41ea7?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Diego Acuña" class="object-contain max-w-full rounded-full aspect-square shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[119px]" />
+          <h3 class="self-stretch px-9 mt-3 bg-blue-400 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5">
+            DIEGO ACUÑA
+          </h3>
+          <p class="mt-6 text-center">
+            Gustavo nunca avanza <br /> <br /> Response: Confirmo
+          </p>
+        </article>
+        <article class="flex flex-col flex-1 items-center py-5 rounded-2xl bg-stone-600 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/98ede75ade8f7cf5c406055e0b45b5dd73ec9614b1a9f81ff326e0ef573b9cc3?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Jack del Aguila" class="object-contain max-w-full rounded-full aspect-square shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[119px]" />
+          <h3 class="self-stretch px-5 mt-3 bg-blue-400 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:pr-5">
+            JACK DEL AGUILA
+          </h3>
+          <p class="mt-6 text-center">
+            El éxito no es la clave de la felicidad, la felicidad es la clave del éxito.
+          </p>
+        </article>
+        <article class="flex flex-col flex-1 items-center py-5 rounded-2xl bg-stone-600 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee761cede5fd757ba8a39fc7cde494910a5aa655c6c57c730e5f2c3e44142c57?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Jose Mayurí" class="object-contain max-w-full rounded-full aspect-square shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[119px]" />
+          <h3 class="self-stretch px-10 mt-3 bg-blue-400 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5">
+            JOSE MAYURÍ
+          </h3>
+          <p class="mt-6 text-center">
+            El éxito no es la clave de la felicidad, la felicidad es la clave del éxito.
+          </p>
+        </article>
+        <article class="flex flex-col flex-1 items-center py-5 rounded-2xl bg-stone-600 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e89cb1db7c0098ebb48b9f3d524d16495907335cfd4b626c422527aade9be13?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Juliana Yauricasa" class="object-contain max-w-full rounded-full aspect-square shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[119px]" />
+          <h3 class="self-stretch px-4 mt-3 bg-blue-400 shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+            JULIANA YAURICASA
+          </h3>
+          <p class="mt-6 text-center">
+            El éxito no es la clave de la felicidad, la felicidad es la clave del éxito.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="resenas" class="mt-6 flex flex-col items-center">
+    <h2 class="text-2xl font-semibold text-black">Reseñas</h2>
+    <article class="flex flex-wrap gap-5 items-center px-5 mt-3.5 w-full text-sm font-semibold text-white rounded-3xl bg-neutral-800 max-w-[937px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/8f3ca055f47ca76dd1ca6673ed7f5e9d8eff8b96a072dc928bdeb677ad4e139b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Diana Aguilar" class="object-contain shrink-0 w-24 aspect-square rounded-[48px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" />
+      <div class="flex shrink-0 w-6 bg-red-400 h-[127px]"></div>
+      <div class="flex flex-col flex-1">
+        <div class="flex justify-between items-start">
+          <h3 class="px-2 py-0.5 bg-red-400">Diana Aguilar</h3>
+          <div class="flex gap-1.5 items-center">
+            <span>5.0</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c903f9720969f1a3f79839e88e1c7fe7b53c88c749fd8dd4d7b7fc0ccbbce5e0?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="5 star rating" class="object-contain w-5 aspect-square" />
+          </div>
+        </div>
+        <p class="mt-3">
+          La plataforma realmente superó mis expectativas. La interfaz es intuitiva y fácil de navegar, lo que me permitió encontrar el evento que quería en cuestión de minutos. Además, el proceso de compra fue rápido y sin complicaciones. Definitivamente usaré esta página para futuros eventos.
+        </p>
+      </div>
+    </article>
+    <article class="flex flex-wrap gap-5 items-center px-5 mt-4 w-full text-sm font-semibold text-white rounded-3xl bg-neutral-800 max-w-[937px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3ad853cf5290121c1a3ac5fbf1ae68a0560f37d110417f14438c787b540e66e?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Gabriela Soliz" class="object-contain shrink-0 w-24 aspect-square rounded-[48px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" />
+      <div class="flex shrink-0 w-6 bg-red-400 h-[127px]"></div>
+      <div class="flex flex-col flex-1">
+        <div class="flex justify-between items-start">
+          <h3 class="px-2 py-0.5 bg-red-400">Gabriela Soliz</h3>
+          <div class="flex gap-1.5 items-center">
+            <span>4.5</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c903f9720969f1a3f79839e88e1c7fe7b53c88c749fd8dd4d7b7fc0ccbbce5e0?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="4.5 star rating" class="object-contain w-5 aspect-square" />
+          </div>
+        </div>
+        <p class="mt-3">
+          Quedé impresionado con la cantidad y calidad de eventos que ofrece la plataforma. Desde conciertos hasta conferencias, siempre encuentro algo que me interesa. Lo mejor es que todo el proceso, desde la búsqueda hasta la compra de tickets, es muy sencillo y eficiente. ¡Altamente recomendable!
+        </p>
+      </div>
+    </article>
+    <article class="flex flex-wrap gap-5 items-center px-5 mt-4 w-full text-sm font-semibold text-white rounded-3xl bg-neutral-800 max-w-[937px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd4c5a6033779302f730b2058d8ac6b8a9f99ffe0a31e72aaf3edd1c65c33269?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Domingo Zarate" class="object-contain shrink-0 w-24 aspect-square rounded-[48px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" />
+      <div class="flex shrink-0 w-6 bg-red-400 h-[127px]"></div>
+      <div class="flex flex-col flex-1">
+        <div class="flex justify-between items-start">
+          <h3 class="px-2 py-0.5 bg-red-400">Domingo Zarate</h3>
+          <div class="flex gap-1.5 items-center">
+            <span>5.0</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c903f9720969f1a3f79839e88e1c7fe7b53c88c749fd8dd4d7b7fc0ccbbce5e0?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="5 star rating" class="object-contain w-5 aspect-square" />
+          </div>
+        </div>
+        <p class="mt-3">
+          Nunca había tenido una experiencia tan fluida comprando entradas para eventos. Me encanta cómo la página organiza los eventos y lo fácil que es filtrar por mis intereses. Además, la seguridad en el proceso de pago me dio mucha tranquilidad. Sin duda, esta será mi página de referencia para adquirir entradas en el futuro.
+        </p>
+      </div>
+    </article>
+    <article class="flex flex-wrap gap-5 items-center px-5 mt-4 w-full text-sm font-semibold text-white rounded-3xl bg-neutral-800 max-w-[937px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:max-w-full">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c39f928f54a786d94bd00b3be3c3062d82c6c64a177219647883de43dcbbe670?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Alonso Chumpitaz" class="object-contain shrink-0 w-24 aspect-square rounded-[48px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" />
+      <div class="flex shrink-0 w-6 bg-red-400 h-[127px]"></div>
+      <div class="flex flex-col flex-1">
+        <div class="flex justify-between items-start">
+          <h3 class="px-2 py-0.5 bg-red-400">Alonso Chumpitaz</h3>
+          <div class="flex gap-1.5 items-center">
+            <span>4.5</span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c903f9720969f1a3f79839e88e1c7fe7b53c88c749fd8dd4d7b7fc0ccbbce5e0?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="4.5 star rating" class="object-contain w-5 aspect-square" />
+          </div>
+        </div>
+        <p class="mt-3">
+          Me sorprendió lo simple y rápido que fue comprar mis entradas en esta plataforma. La página es muy clara, con toda la información que necesitas sobre cada evento, y la compra fue completamente segura.
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <section class="flex relative flex-col justify-center items-center self-stretch px-20 py-20 mt-12 w-full font-semibold text-white min-h-[279px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/41bf8dedf11a29e46a5c7b1cd6968fe6bbf420b6be4bd39955236c0aec524414?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Background image" class="object-cover absolute inset-0 size-full" />
+    <div class="flex relative flex-col ml-9 max-w-full w-[616px]">
+      <h2 class="text-4xl max-md:max-w-full">¿QUIERES CREAR TU EVENTO?</h2>
+      <button class="self-center flex items-center justify-center px-3.5 py-3 mt-10 max-w-full text-2xl whitespace-nowrap bg-orange-500 rounded-2xl shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[173px] h-[50px]">
+        Contáctanos
+      </button>
+    </div>
+  </section>
+</main>
+
+<footer class="flex flex-col items-center self-stretch px-16 pt-10 pb-2.5 w-full shadow-[0px_4px_4px_rgba(0,0,0,0.25)] bg-neutral-800 max-md:px-5 max-md:max-w-full">
+  <div class="ml-3.5 w-full max-w-[934px] max-md:max-w-full">
+    <div class="flex gap-5 max-md:flex-col">
+      <div class="flex flex-col w-1/5 max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col items-start text-base font-bold text-orange-500 max-md:mt-10">
+          <h3>Conócenos</h3>
+          <nav class="flex flex-col self-stretch pl-1.5 mt-4 text-white">
+            <a href="#about">Acerca de nosotros</a>
+            <a href="#faq" class="mt-3.5">Preguntas Frecuentes</a>
+            <a href="#terms" class="mt-4">Términos y condiciones</a>
+          </nav>
+          <h3 class="mt-3.5">Síguenos</h3>
+        </div>
+      </div>
+      <div class="flex flex-col ml-5 w-4/5 max-md:ml-0 max-md:w-full">
+        <div class="flex flex-col w-full max-md:mt-10 max-md:max-w-full">
+          <div class="max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col">
+              <div class="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col text-base max-md:mt-10">
+                  <h3 class="self-start font-bold text-orange-500">Explora</h3>
+                  <nav class="flex flex-col pl-2.5 mt-4 text-white">
+                    <a href="#feedback">Danos tu opinión</a>
+                    <a href="#how-it-works" class="mt-4">¿Cómo funciona Eventra?</a>
+                  </nav>
+                </div>
+              </div>
+              <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col w-full text-base max-md:mt-10">
+                  <h3 class="self-start font-bold text-orange-500">Reclamaciones</h3>
+                  <a href="#complaints" class="flex gap-1 mt-3.5 text-white">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/96de6ea74acbf12dea051058c08448c89b83716fb2b56da53ff5a71e7d4e8a51?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="" class="object-contain shrink-0 w-6 aspect-square" />
+                    <span class="grow shrink w-[159px]">Libro de reclamaciones</span>
+                  </a>
+                </div>
+              </div>
+              <div class="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                <div class="flex flex-col w-full max-md:mt-10">
+                  <h3 class="mr-6 text-base font-bold text-orange-500 max-md:mr-2.5">Información de Contacto</h3>
+                  <address class="flex gap-3 mt-4 not-italic">
+                    <div class="flex flex-col">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/344be3e2549b6d943e28484b3df023d7185c6092ba34e5c1855f145b99435ef1?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Location icon" class="object-contain w-6 aspect-square" />
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c0537897914cdcaab43a19b68e5a6da6c234159268c7540042878143d0e75e40?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Phone icon" class="object-contain mt-9 w-6 aspect-square" />
+                    </div>
+                    <div class="text-base text-white">
+                      Calle San Jeronimo 314, <br /> Lima, Perú <br />
+                    </div>
+                  </address>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-2.5 self-end mt-4 mr-11 text-base text-white max-md:mr-2.5">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/23bbd6ca6a7db975de345dfa4fde3e03eeadf623f577aee0b02615318e6c4b5b?placeholderIfAbsent=true&apiKey=493704e98b76408d8785bb427786fc81" alt="Phone icon" class="object-contain shrink-0 w-6 aspect-square" />
+            <a href="tel:+51999999999" class="basis-auto">(51) 999-999-999</a>
+          </div>
+          <p class="self-start mt-24 ml-20 text-base text-white max-md:mt-10 max-md:ml-2.5">
+            © 2024 Eventra. All rights reserved.
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+</footer>
 
 
 <router-outlet />
