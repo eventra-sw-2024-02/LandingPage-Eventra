@@ -11,6 +11,8 @@ module.exports = {
         customPink: '#FF07D6',
         customOrange: '#FF6607',
         customBlue: '#3407FF',
+        customG: '#41b8ff',
+        customOrange2: '#FB6F05',
       }
     },
   },
